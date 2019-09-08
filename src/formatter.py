@@ -3,19 +3,35 @@
 #!/usr/bin/env python3
 
 import csv
+from datetime import datetime
+
+
+def format_row(row):
+    """Format each row"""
+    out_row = []
+    for item in row:
+        if not item.strip():
+            out_row.append("n/a")
+        else:
+            out_row.append(item)
+    return out_row
 
 
 def main():
     """Go."""
-    with open("stash_report copy.csv", newline="") as file:
+    row_list = []
+    in_file = "stash_report.csv"
+    out_file = "out_report.csv"
+    with open(in_file, newline="") as file:
         reader = csv.reader(file, delimiter=";")
         for row in reader:
-            for item in row.copy():
-                if item == " ":
-                    item.replace(' ', "taco")
-                print(item)
+            row_list.append(", ".join(format_row(row)))
 
-            # print(", ".join(row.copy()))
+    with open(out_file, "w", newline="") as file:
+
+        writer = csv.writer(file, delimiter=";")
+        for row in row_list.copy():
+            writer.writerow([row])
 
 
 if __name__ == "__main__":
