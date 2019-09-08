@@ -22,3 +22,5 @@ Pipfile.lock
 coverage.xml
 desktop.ini
 htmlcov
+
+reports

@@ -7,12 +7,12 @@ import csv
 
 def main():
     """Go."""
-    with open("stash_report.csv", newline="") as file:
+    with open("stash_report copy.csv", newline="") as file:
         reader = csv.reader(file, delimiter=";")
         for row in reader:
             for item in row.copy():
                 if item == " ":
-                    item = "taco"
+                    item.replace(' ', "taco")
                 print(item)
 
             # print(", ".join(row.copy()))
