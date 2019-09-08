@@ -3,6 +3,9 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 name = "pypi"
 
+[packages]
+
+
 [dev-packages]
 bandit = "*"
 black = "*"
@@ -21,6 +24,3 @@ python_version = "3.7"
 
 [pipenv]
 allow_prereleases = true
-
-[packages]
-tox = "*"
