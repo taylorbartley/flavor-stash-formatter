@@ -1,10 +1,10 @@
+#!/usr/bin/env python3
 """Python script to convert flavor csv."""
 
-#!/usr/bin/env python3
 
+import argparse
 import csv
 from datetime import date
-import argparse
 
 
 def format_row(row):
@@ -36,11 +36,13 @@ def file_stuff(in_file, out_file):
         for row in row_list.copy():
             writer.writerow([row])
 
+
 def parse_that_shit():
     """Parse that shit."""
     parser = argparse.ArgumentParser(description="Take filename.")
     parser.add_argument("filename", help="Filename of report.")
     return parser.parse_args()
+
 
 def main():
     """Go."""

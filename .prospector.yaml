@@ -27,7 +27,7 @@ pep8:
     disable:
         - E122
         - E123
-        - E265
+        # - E265
         - N812
     options:
         max-line-lenght: 79
